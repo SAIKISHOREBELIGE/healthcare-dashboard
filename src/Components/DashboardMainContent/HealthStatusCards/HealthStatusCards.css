@@ -1,0 +1,94 @@
+.health-status-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.status-card {
+  display: flex;
+  align-items: center;
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  background-color: #f8f9fa;
+  border-left: 4px solid transparent;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.status-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.status-card.healthy {
+  border-left-color: var(--color-success);
+}
+
+.status-card.warning {
+  border-left-color: var(--color-warning);
+}
+
+.status-card.critical {
+  border-left-color: var(--color-error);
+}
+
+.status-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #f1f3f4;
+  margin-right: var(--space-3);
+}
+
+.status-info {
+  flex: 1;
+}
+
+.status-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.status-date {
+  font-size: 0.75rem;
+  color: var(--color-text-tertiary);
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.status-indicator.healthy {
+  background-color: var(--color-success);
+}
+
+.status-indicator.warning {
+  background-color: var(--color-warning);
+}
+
+.status-indicator.critical {
+  background-color: var(--color-error);
+}
+
+@media screen and (max-width: 1200px) {
+  .health-status-cards {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: var(--space-2);
+  }
+  
+  .status-card {
+    min-width: 180px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .status-card {
+    min-width: 150px;
+  }
+}

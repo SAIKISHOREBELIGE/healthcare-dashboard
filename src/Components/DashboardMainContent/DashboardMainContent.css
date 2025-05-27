@@ -1,0 +1,71 @@
+.dashboard-main {
+  flex: 1;
+  padding: var(--space-5);
+  overflow-y: auto;
+  background-color: var(--color-background);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: var(--space-5);
+  grid-template-areas:
+    "anatomy calendar calendar"
+    "schedule schedule activity";
+}
+
+.dashboard-section {
+  background-color: var(--color-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-5);
+  height: 100%;
+}
+
+.anatomy-container {
+  grid-area: anatomy;
+  display: flex;
+  flex-direction: column;
+}
+
+.calendar-container {
+  grid-area: calendar;
+}
+
+.schedule-container {
+  grid-area: schedule;
+}
+
+.activity-container {
+  grid-area: activity;
+}
+
+@media screen and (max-width: 1200px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "anatomy calendar"
+      "schedule activity";
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dashboard-main {
+    padding: var(--space-3);
+  }
+  
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "anatomy"
+      "calendar"
+      "schedule"
+      "activity";
+    gap: var(--space-3);
+  }
+  
+  .dashboard-section {
+    padding: var(--space-4);
+  }
+}  

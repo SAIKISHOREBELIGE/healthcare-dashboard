@@ -1,0 +1,116 @@
+.anatomy-section {
+  flex: 1;
+  margin-bottom: var(--space-5);
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: var(--space-4);
+  color: var(--color-text-primary);
+}
+
+.anatomy-visualization {
+  position: relative;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+}
+
+.human-body {
+  position: relative;
+  height: 100%;
+}
+
+.body-image {
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.6;
+}
+
+/* Health status indicators */
+.health-indicator {
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+.indicator-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+
+.indicator-label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Positioning of indicators */
+.heart {
+  top: 49%;
+  left: 49%;
+  transform: translateX(-20px);
+}
+
+.lungs {
+  top: 59%;
+  right: 49%;
+}
+
+.teeth {
+  top: 18%;
+  left: 46%;
+}
+
+.bone {
+  bottom: 50%;
+  left: 30%;
+}
+
+/* Status colors */
+.health-indicator.healthy .indicator-dot {
+  background-color: var(--color-success);
+}
+
+.health-indicator.healthy .indicator-label {
+  color: var(--color-success);
+  border: 1px solid rgba(52, 168, 83, 0.2);
+}
+
+.health-indicator.warning .indicator-dot {
+  background-color: var(--color-warning);
+}
+
+.health-indicator.warning .indicator-label {
+  color: var(--color-warning);
+  border: 1px solid rgba(251, 188, 4, 0.2);
+}
+
+.health-indicator.critical .indicator-dot {
+  background-color: var(--color-error);
+}
+
+.health-indicator.critical .indicator-label {
+  color: var(--color-error);
+  border: 1px solid rgba(234, 67, 53, 0.2);
+}
+
+@media screen and (max-width: 768px) {
+  .anatomy-visualization {
+    height: 200px;
+  }
+  
+  .indicator-label {
+    padding: 2px 6px;
+    font-size: 0.7rem;
+  }
+}
